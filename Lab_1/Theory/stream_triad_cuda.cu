@@ -6,14 +6,14 @@
 #include <vector>
 
 
-const int block_size = 512;
+const int block_size = 1;
 const int chunk_size = 1;
 
 __global__ void compute_triad(const int    N,
-                              const float  a,
-                              const float *x,
-                              const float *y,
-                              float *      z)
+                              const double  a,
+                              const double *x,
+                              const double *y,
+                              double *      z)
 {
   const int idx_base = threadIdx.x + blockIdx.x * (blockDim.x * chunk_size);
   for (unsigned int i = 0; i < chunk_size; ++i)
@@ -25,7 +25,7 @@ __global__ void compute_triad(const int    N,
 }
 
 
-__global__ void set_vector(const int N, const float val, float *x)
+__global__ void set_vector(const int N, const double val, double *x)
 {
   const int idx_base = threadIdx.x + blockIdx.x * (blockDim.x * chunk_size);
   for (unsigned int i = 0; i < chunk_size; ++i)
@@ -42,11 +42,11 @@ void benchmark_triad(const bool        align,
                      const std::size_t N,
                      const long long   repeat)
 {
-  float *v1, *v2, *v3;
+  double *v1, *v2, *v3;
   // allocate memory on the device
-  cudaMalloc(&v1, N * sizeof(float));
-  cudaMalloc(&v2, N * sizeof(float));
-  cudaMalloc(&v3, N * sizeof(float));
+  cudaMalloc(&v1, N * sizeof(double));
+  cudaMalloc(&v2, N * sizeof(double));
+  cudaMalloc(&v3, N * sizeof(double));
 
   const unsigned int n_blocks = (N + block_size - 1) / block_size;
 
@@ -54,7 +54,7 @@ void benchmark_triad(const bool        align,
   set_vector<<<n_blocks, block_size>>>(N, 42.f, v2);
   set_vector<<<n_blocks, block_size>>>(N, 0.f, v3);
 
-  std::vector<float> result_host(N);
+  std::vector<double> result_host(N);
 
   const unsigned int           n_tests = 20;
   const unsigned long long int n_repeat =
@@ -82,7 +82,7 @@ void benchmark_triad(const bool        align,
     }
 
   // Copy the result back to the host
-  cudaMemcpy(result_host.data(), v3, N * sizeof(float), cudaMemcpyDeviceToHost);
+  cudaMemcpy(result_host.data(), v3, N * sizeof(double), cudaMemcpyDeviceToHost);
   if ((result_host[0] + result_host[N - 1]) != 526.f)
     std::cout << "Error in computation, got "
               << (result_host[0] + result_host[N - 1]) << " instead of 526"
@@ -98,7 +98,7 @@ void benchmark_triad(const bool        align,
             << std::setw(11) << avg / n_tests << " " << std::setw(11) << worst
             << " seconds or " << std::setw(8) << 1e-6 * N / best
             << " MUPD/s or " << std::setw(8)
-            << 1e-9 * 3 * sizeof(float) * N / best << " GB/s" << std::endl;
+            << 1e-9 * 3 * sizeof(double) * N / best << " GB/s" << std::endl;
 }
 
 int main(int argc, char **argv)
