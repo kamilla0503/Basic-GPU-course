@@ -1,134 +1,21 @@
-*** Error in `./matrixvector': free(): corrupted unsorted chunks: 0x0000000002af34d0 ***
-======= Backtrace: =========
-/lib64/libc.so.6(+0x81679)[0x7f28799a3679]
-/lib64/libcuda.so.1(+0x254e09)[0x7f287841ae09]
-/lib64/libcuda.so.1(+0x2fbf02)[0x7f28784c1f02]
-/lib64/libcuda.so.1(+0x2fc94e)[0x7f28784c294e]
-/lib64/libcuda.so.1(+0x1703c2)[0x7f28783363c2]
-/lib64/libcuda.so.1(+0x23fb1a)[0x7f2878405b1a]
-./matrixvector[0x40da40]
-./matrixvector[0x43fb61]
-./matrixvector[0x4049d3]
-./matrixvector[0x404fe7]
-/lib64/libc.so.6(__libc_start_main+0xf5)[0x7f2879944505]
-./matrixvector[0x404189]
-======= Memory map: ========
-00400000-00473000 r-xp 00000000 4f9:2c566 144115641698346066             /home/knfayzullina/ABP/Lab_2/matrixvector
-00673000-00676000 r--p 00073000 4f9:2c566 144115641698346066             /home/knfayzullina/ABP/Lab_2/matrixvector
-00676000-00677000 rw-p 00076000 4f9:2c566 144115641698346066             /home/knfayzullina/ABP/Lab_2/matrixvector
-00677000-00678000 rw-p 00000000 00:00 0 
-02526000-02d04000 rw-p 00000000 00:00 0                                  [heap]
-200000000-200400000 ---p 00000000 00:00 0 
-200400000-200600000 rw-s 00000000 00:05 122522                           /dev/nvidiactl
-200600000-200800000 rw-s 00000000 00:05 120637                           /dev/nvidia1
-200800000-205000000 rw-s 00000000 00:05 122522                           /dev/nvidiactl
-205000000-206000000 ---p 00000000 00:00 0 
-206000000-206200000 rw-s 00000000 00:05 122522                           /dev/nvidiactl
-206200000-206400000 rw-s 00000000 00:05 122522                           /dev/nvidiactl
-206400000-206600000 rw-s 206400000 00:05 127472                          /dev/nvidia-uvm
-206600000-206800000 rw-s 00000000 00:05 122522                           /dev/nvidiactl
-206800000-206a00000 ---p 00000000 00:00 0 
-206a00000-206c00000 rw-s 00000000 00:05 122522                           /dev/nvidiactl
-206c00000-206e00000 rw-s 00000000 00:04 54112252                         /dev/zero (deleted)
-206e00000-300200000 ---p 00000000 00:00 0 
-10000000000-10004000000 ---p 00000000 00:00 0 
-7f283c000000-7f283c021000 rw-p 00000000 00:00 0 
-7f283c021000-7f2840000000 ---p 00000000 00:00 0 
-7f2840000000-7f2850000000 ---p 00000000 00:00 0 
-7f2850000000-7f2850021000 rw-p 00000000 00:00 0 
-7f2850021000-7f2854000000 ---p 00000000 00:00 0 
-7f2856000000-7f2858000000 ---p 00000000 00:00 0 
-7f2858000000-7f2858021000 rw-p 00000000 00:00 0 
-7f2858021000-7f285c000000 ---p 00000000 00:00 0 
-7f285e000000-7f285e400000 ---p 00000000 00:00 0 
-7f285e400000-7f285e600000 rw-s 00000000 00:04 54112250                   /dev/zero (deleted)
-7f285e600000-7f285e800000 rw-s 00000000 00:05 122522                     /dev/nvidiactl
-7f285e800000-7f285ea00000 rw-s 00000000 00:04 54112251                   /dev/zero (deleted)
-7f285ea00000-7f285f000000 ---p 00000000 00:00 0 
-7f285f000000-7f285f200000 rw-s 00000000 00:05 122522                     /dev/nvidiactl
-7f285f200000-7f285f400000 rw-s 00000000 00:04 54112253                   /dev/zero (deleted)
-7f285f400000-7f285f619000 rw-s 00000000 00:05 122522                     /dev/nvidiactl
-7f285f619000-7f2870000000 ---p 00000000 00:00 0 
-7f2870fac000-7f28711c4000 rw-p 00000000 00:00 0 
-7f28711c4000-7f28711c5000 ---p 00000000 00:00 0 
-7f28711c5000-7f28719c5000 rw-p 00000000 00:00 0 
-7f28719c5000-7f28719c6000 ---p 00000000 00:00 0 
-7f28719c6000-7f28721c6000 rw-p 00000000 00:00 0 
-7f28721c6000-7f28781c6000 ---p 00000000 00:00 0 
-7f28781c6000-7f287950a000 r-xp 00000000 08:03 11279123                   /usr/lib64/libcuda.so.470.57.02
-7f287950a000-7f2879709000 ---p 01344000 08:03 11279123                   /usr/lib64/libcuda.so.470.57.02
-7f2879709000-7f28797f7000 r--p 01343000 08:03 11279123                   /usr/lib64/libcuda.so.470.57.02
-7f28797f7000-7f2879902000 rw-p 01431000 08:03 11279123                   /usr/lib64/libcuda.so.470.57.02
-7f2879902000-7f2879922000 rw-p 00000000 00:00 0 
-7f2879922000-7f2879ae5000 r-xp 00000000 08:03 11276289                   /usr/lib64/libc-2.17.so
-7f2879ae5000-7f2879ce5000 ---p 001c3000 08:03 11276289                   /usr/lib64/libc-2.17.so
-7f2879ce5000-7f2879ce9000 r--p 001c3000 08:03 11276289                   /usr/lib64/libc-2.17.so
-7f2879ce9000-7f2879ceb000 rw-p 001c7000 08:03 11276289                   /usr/lib64/libc-2.17.so
-7f2879ceb000-7f2879cf0000 rw-p 00000000 00:00 0 
-7f2879cf0000-7f2879d07000 r-xp 00000000 00:2a 2474676227                 /opt/ohpc/pub/compiler/gcc/8.3.0/lib64/libgcc_s.so.1
-7f2879d07000-7f2879f06000 ---p 00017000 00:2a 2474676227                 /opt/ohpc/pub/compiler/gcc/8.3.0/lib64/libgcc_s.so.1
-7f2879f06000-7f2879f07000 r--p 00016000 00:2a 2474676227                 /opt/ohpc/pub/compiler/gcc/8.3.0/lib64/libgcc_s.so.1
-7f2879f07000-7f2879f08000 rw-p 00017000 00:2a 2474676227                 /opt/ohpc/pub/compiler/gcc/8.3.0/lib64/libgcc_s.so.1
-7f2879f08000-7f287a009000 r-xp 00000000 08:03 11276305                   /usr/lib64/libm-2.17.so
-7f287a009000-7f287a208000 ---p 00101000 08:03 11276305                   /usr/lib64/libm-2.17.so
-7f287a208000-7f287a209000 r--p 00100000 08:03 11276305                   /usr/lib64/libm-2.17.so
-7f287a209000-7f287a20a000 rw-p 00101000 08:03 11276305                   /usr/lib64/libm-2.17.so
-7f287a20a000-7f287a37e000 r-xp 00000000 00:2a 2474676271                 /opt/ohpc/pub/compiler/gcc/8.3.0/lib64/libstdc++.so.6.0.25
-7f287a37e000-7f287a57d000 ---p 00174000 00:2a 2474676271                 /opt/ohpc/pub/compiler/gcc/8.3.0/lib64/libstdc++.so.6.0.25
-7f287a57d000-7f287a587000 r--p 00173000 00:2a 2474676271                 /opt/ohpc/pub/compiler/gcc/8.3.0/lib64/libstdc++.so.6.0.25
-7f287a587000-7f287a589000 rw-p 0017d000 00:2a 2474676271                 /opt/ohpc/pub/compiler/gcc/8.3.0/lib64/libstdc++.so.6.0.25
-7f287a589000-7f287a58d000 rw-p 00000000 00:00 0 
-7f287a58d000-7f287a58f000 r-xp 00000000 08:03 11276301                   /usr/lib64/libdl-2.17.so
-7f287a58f000-7f287a78f000 ---p 00002000 08:03 11276301                   /usr/lib64/libdl-2.17.so
-7f287a78f000-7f287a790000 r--p 00002000 08:03 11276301                   /usr/lib64/libdl-2.17.so
-7f287a790000-7f287a791000 rw-p 00003000 08:03 11276301                   /usr/lib64/libdl-2.17.so
-7f287a791000-7f287a7a8000 r-xp 00000000 08:03 11276341                   /usr/lib64/libpthread-2.17.so
-7f287a7a8000-7f287a9a7000 ---p 00017000 08:03 11276341                   /usr/lib64/libpthread-2.17.so
-7f287a9a7000-7f287a9a8000 r--p 00016000 08:03 11276341                   /usr/lib64/libpthread-2.17.so
-7f287a9a8000-7f287a9a9000 rw-p 00017000 08:03 11276341                   /usr/lib64/libpthread-2.17.so
-7f287a9a9000-7f287a9ad000 rw-p 00000000 00:00 0 
-7f287a9ad000-7f287a9b4000 r-xp 00000000 08:03 11276349                   /usr/lib64/librt-2.17.so
-7f287a9b4000-7f287abb3000 ---p 00007000 08:03 11276349                   /usr/lib64/librt-2.17.so
-7f287abb3000-7f287abb4000 r--p 00006000 08:03 11276349                   /usr/lib64/librt-2.17.so
-7f287abb4000-7f287abb5000 rw-p 00007000 08:03 11276349                   /usr/lib64/librt-2.17.so
-7f287abb5000-7f287abd7000 r-xp 00000000 08:03 11272290                   /usr/lib64/ld-2.17.so
-7f287ac12000-7f287ac13000 rw-p 00000000 00:00 0 
-7f287ac13000-7f287ac14000 rw-s 00000000 00:05 122522                     /dev/nvidiactl
-7f287ac14000-7f287ac15000 rw-s 00000000 00:05 122522                     /dev/nvidiactl
-7f287ac15000-7f287ac16000 rw-s 00000000 00:05 122522                     /dev/nvidiactl
-7f287ac16000-7f287ac17000 rw-s 00000000 00:05 122522                     /dev/nvidiactl
-7f287ac17000-7f287ac18000 rw-s 00000000 00:05 122522                     /dev/nvidiactl
-7f287ac18000-7f287ac19000 rw-s 00000000 00:05 122522                     /dev/nvidiactl
-7f287ac19000-7f287ac1a000 rw-s 00000000 00:05 122522                     /dev/nvidiactl
-7f287ac1a000-7f287ac1b000 rw-s 00000000 00:05 122522                     /dev/nvidiactl
-7f287ac1b000-7f287ac1c000 rw-s 00000000 00:05 122522                     /dev/nvidiactl
-7f287ac1c000-7f287ac1d000 rw-s 00000000 00:05 122522                     /dev/nvidiactl
-7f287ac1d000-7f287ac1e000 rw-s 00000000 00:05 122522                     /dev/nvidiactl
-7f287ac1e000-7f287ac1f000 rw-s 00000000 00:05 122522                     /dev/nvidiactl
-7f287ac1f000-7f287ac20000 rw-s 00000000 00:05 122522                     /dev/nvidiactl
-7f287ac20000-7f287ac21000 rw-s 00000000 00:05 122522                     /dev/nvidiactl
-7f287ac21000-7f287ac22000 rw-s 00000000 00:05 122522                     /dev/nvidiactl
-7f287ac22000-7f287ac23000 rw-s 00000000 00:05 122522                     /dev/nvidiactl
-7f287ac23000-7f287ac24000 rw-s 00000000 00:05 122522                     /dev/nvidiactl
-7f287ac24000-7f287ac25000 rw-s 00000000 00:05 122522                     /dev/nvidiactl
-7f287ac25000-7f287ac26000 rw-s 00000000 00:05 122522                     /dev/nvidiactl
-7f287ac26000-7f287ac27000 rw-s 00000000 00:05 122522                     /dev/nvidiactl
-7f287ac27000-7f287ac28000 rw-s 00000000 00:05 122522                     /dev/nvidiactl
-7f287ac28000-7f287ac29000 rw-s 00000000 00:05 122522                     /dev/nvidiactl
-7f287ac29000-7f287adbe000 rw-p 00000000 00:00 0 
-7f287adbe000-7f287adbf000 rw-s 00000000 00:05 122522                     /dev/nvidiactl
-7f287adbf000-7f287adc0000 rw-s 00000000 00:05 122522                     /dev/nvidiactl
-7f287adc0000-7f287adc1000 rw-s 00000000 00:05 122522                     /dev/nvidiactl
-7f287adc1000-7f287adc2000 rw-s 00000000 00:05 122522                     /dev/nvidiactl
-7f287adc2000-7f287adc3000 rw-s 00000000 00:05 122522                     /dev/nvidiactl
-7f287adc3000-7f287adc4000 rw-s 00000000 00:05 122522                     /dev/nvidiactl
-7f287adc4000-7f287adc5000 r--s 00000000 00:05 120637                     /dev/nvidia1
-7f287adc5000-7f287add5000 -w-s 00000000 00:05 120637                     /dev/nvidia1
-7f287add5000-7f287add6000 rw-p 00000000 00:00 0 
-7f287add6000-7f287add7000 r--p 00021000 08:03 11272290                   /usr/lib64/ld-2.17.so
-7f287add7000-7f287add8000 rw-p 00022000 08:03 11272290                   /usr/lib64/ld-2.17.so
-7f287add8000-7f287add9000 rw-p 00000000 00:00 0 
-7ffc3db6b000-7ffc3db8e000 rw-p 00000000 00:00 0                          [stack]
-7ffc3dbf2000-7ffc3dbf4000 r-xp 00000000 00:00 0                          [vdso]
-ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
-/var/spool/slurm/d/job381942/slurm_script: line 8: 388355 Aborted                 ./matrixvector -min 100 -max 10000
+STREAM triad of size      104 : min/avg/max: 2.06314e-05 2.06347e-05 2.06813e-05 seconds or  5.04086 MUPD/s or  333.555 GB/s
+STREAM triad of size      128 : min/avg/max: 2.49375e-05 2.49377e-05 2.49381e-05 seconds or  5.13284 MUPD/s or  339.034 GB/s
+STREAM triad of size      160 : min/avg/max: 3.07057e-05 3.07068e-05 3.07073e-05 seconds or  5.21077 MUPD/s or  343.648 GB/s
+STREAM triad of size      200 : min/avg/max: 3.79377e-05 3.79383e-05 3.79396e-05 seconds or   5.2718 MUPD/s or  347.241 GB/s
+STREAM triad of size      248 : min/avg/max: 4.64578e-05 4.64606e-05 4.64641e-05 seconds or  5.33818 MUPD/s or  351.275 GB/s
+STREAM triad of size      304 : min/avg/max: 5.65758e-05 5.65765e-05 5.65774e-05 seconds or  5.37332 MUPD/s or  353.326 GB/s
+STREAM triad of size      368 : min/avg/max: 6.80721e-05 6.80729e-05 6.80738e-05 seconds or  5.40603 MUPD/s or  355.274 GB/s
+STREAM triad of size      448 : min/avg/max: 8.24194e-05 8.24217e-05 8.24281e-05 seconds or  5.43561 MUPD/s or  357.045 GB/s
+STREAM triad of size      544 : min/avg/max: 9.96712e-05  9.9676e-05 9.96866e-05 seconds or  5.45794 MUPD/s or  358.371 GB/s
+STREAM triad of size      656 : min/avg/max: 0.000119832 0.000119833 0.000119834 seconds or  5.47433 MUPD/s or  359.335 GB/s
+STREAM triad of size      792 : min/avg/max: 0.000144319  0.00014432 0.000144322 seconds or  5.48784 MUPD/s or  360.127 GB/s
+STREAM triad of size      952 : min/avg/max: 0.000258311 0.000258322 0.000258333 seconds or  3.68548 MUPD/s or    241.8 GB/s
+STREAM triad of size     1144 : min/avg/max: 0.000511395 0.000511431 0.000511456 seconds or  2.23702 MUPD/s or  146.742 GB/s
+STREAM triad of size     1376 : min/avg/max: 0.000615945 0.000615981 0.000616012 seconds or  2.23397 MUPD/s or  146.521 GB/s
+STREAM triad of size     1656 : min/avg/max: 0.000747788 0.000747826 0.000747864 seconds or  2.21453 MUPD/s or  145.228 GB/s
+STREAM triad of size     1992 : min/avg/max: 0.000904299 0.000904375 0.000904432 seconds or  2.20281 MUPD/s or  144.445 GB/s
+STREAM triad of size     2392 : min/avg/max:  0.00110189  0.00110201  0.00110206 seconds or  2.17082 MUPD/s or  142.335 GB/s
+STREAM triad of size     2872 : min/avg/max:  0.00132471  0.00132477  0.00132481 seconds or  2.16802 MUPD/s or  142.142 GB/s
+STREAM triad of size     3448 : min/avg/max:  0.00161345  0.00161355  0.00161363 seconds or  2.13703 MUPD/s or  140.102 GB/s
+STREAM triad of size     4144 : min/avg/max:  0.00196035   0.0019605  0.00196062 seconds or  2.11391 MUPD/s or  138.579 GB/s
+STREAM triad of size     4976 : min/avg/max:  0.00236175  0.00236185  0.00236197 seconds or  2.10691 MUPD/s or  138.115 GB/s
