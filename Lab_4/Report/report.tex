@@ -1,0 +1,76 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{amsmath}
+\usepackage{hyperref}
+%\usepackage[english]{babel}
+
+\usepackage[left=2cm,right=1cm, top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
+
+\renewcommand{\normalsize}{\fontsize{14}{18pt}\selectfont}
+
+\title{A TensorFlow example}
+\author{ Kamilla Faizullina}
+\date{\empty}
+
+\begin{document}
+
+
+\maketitle
+  We implement Conway’s Game of Life using TensorFlow and run the program either using GPU or CPU.
+ 
+
+\section{Implementation}
+ For the main function we use built-in conv2d function which applies a 2D convolution over an  state of the simulation. 
+ To count information from neighbors cells, we can use kernel consisting of ones. 
+ \begin{verbatim}
+  kernel = tf.reshape(tf.ones([3,3], dtype=board.dtype), [3,3,1,1])
+ for i in range(iters):      
+ 	neighbours = tf.nn.conv2d(board, kernel, [1,1,1,1], "SAME") - board
+ 	survive = tf.logical_and(tf.equal(board, 1), tf.equal(neighbours, 2))
+ 	born = tf.equal(neighbours, 3)
+ 	board = tf.cast(tf.logical_or(survive, born), board.dtype)
+ \end{verbatim}
+ \begin{figure}[hp]
+ 	\includegraphics[scale=0.17]{start.png} 
+ 	\includegraphics[scale=0.17]{end.png}  \\
+ 	\includegraphics[scale=0.97]{test.png} 
+ 	\caption{ First and Last states. I made tests on Google Collab to validate the program.  }
+ 	\label{states}
+ \end{figure}
+
+
+
+
+
+
+\section{ Performance for CPU and the GPU }
+ Tensorflow allows to run program on the GPU (I suppose it is quite optimized in comparison to my own implementations).
+ 
+\begin{table}[htp]
+	\centering
+	\begin{tabular}{||c c c   ||} 
+		\hline
+		Type  & GPU time  &  CPU time   \\ [0.5ex] 
+		\hline\hline
+		 tf.float16 & 12.461 & 49.87 \\ 
+		tf.float32 &   11.22 & 40.872 \\ 
+		tf.float64 & 12.685 & 44.837 \\
+		 tf.int32 & 19.8 &50.715 \\	[1ex] 
+		\hline
+	\end{tabular}
+	\caption{Results }
+	\label{table:2}
+\end{table}
+
+Table \ref{table:2} presents obtained run time for four different data types. In all cases, GPU had more performance.  
+ 
+%\includegraphics[scale=0.6]{fow_prev_trim.png}
+ 
+
+ 
+
+%\end{thebibliography}
+
+\end{document}
