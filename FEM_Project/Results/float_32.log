@@ -1,0 +1,5 @@
+Computing on a 32^3 domain with float numbers
+L2 discretization error with sparse matrix: 0.039458
+Mat-vec of size 32768: 0.00110557 seconds or 6.48442 GB/s 
+Conjugate gradient solve of size 32768 in 91 iterations: 0.0110129 seconds or  270.762 MUPD/s/it
+Error conjugate gradient solve: 2.14835e-05

@@ -1,0 +1,1 @@
+/var/spool/slurm/d/job414717/slurm_script: line 9: 141420 Aborted                 ./app.cuda -N 64 -repeat 200 -number float > ELL_float_64.log 2>&1
